@@ -9,6 +9,7 @@ import numpy as np
 # Lectura del csv e impresion del header
 data = pd.read_csv('C:/Users/raulh/OneDrive/Documentos/Tareas/Mineria de datos/lol_dataframe.csv')
 print(data.shape,data.head())
+asd
 
 # Veamos el dataset por sus variables categóricas y numéricas
 data.info()
