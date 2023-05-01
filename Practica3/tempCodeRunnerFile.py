@@ -4,11 +4,3 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from Practica2.Practica2 import cols
-
-
-P2.data
-P2.sel_cols
-
-for i in range(0,3):
-    plt.scatter(x = P2.data['gameId'], y = P2.data[P2.sel_cols[i]])
-plt.show()
