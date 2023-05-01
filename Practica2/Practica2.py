@@ -5,6 +5,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 data = pd.read_csv('C:/Users/raulh/OneDrive/Documentos/Tareas/Mineria de datos/lol_dataframe2.csv')
+sel_cols = ['blueWardsPlaced', 'redWardsPlaced', 'blueTotalGold','redTotalGold']
+gold = ['blueTotalGold','redTotalGold']
+wards = ['blueWardsPlaced', 'redWardsPlaced']
+
 # Visualizamos nuestro dataframe por sus categorias\
 data.info()
 print('-------------------------------------------------------------------------------\n')
@@ -13,10 +17,6 @@ print('-------------------------------------------------------------------------
 print ('La suma de las Victorias del Equipo Azul es:', data['blueWins'].sum(), 
        '\nLa suma de las Victorias del Equipo Red es:', data['redWins'].sum())
 print('-------------------------------------------------------------------------------\n')
-
-gold = ['blueTotalGold','redTotalGold']
-wards = ['blueWardsPlaced', 'redWardsPlaced']
-##cols = data[sel_cols]
 
 # Buscamos el maximo valor de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
 print('El maximo valor de Wards del equipo azul colocados es:', data['blueWardsPlaced'].max(),
