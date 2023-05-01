@@ -10,60 +10,62 @@ data.info()
 print('-------------------------------------------------------------------------------\n')
 
 # Calculamos la suma individual de las columnas blueWins y redWins
-print ('La suma de las Victorias del Equipo Azul es:', data['blueWins'].sum(), '\nLa suma de las Victorias del Equipo Red es:', data['redWins'].sum())
-print('-------------------------------------------------------------------------------\n')
-
-# Buscamos la moda de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
-print('El valor de la moda de Wards del equipo azul colocados es:', data['blueWardsPlaced'].mode(),'\nEl valor de la moda de Wards del Equipo Rojo colocados es:', 
-      data['redWardsPlaced'].mode(), '\nEl valor de la moda del Total de Oro ganado del Equipo Azul es:', data['blueTotalGold'].mode(), 
-      '\nEl valor de la moda del Total de Oro ganado del Equipo Red es:', data['redTotalGold'].mode())
+print ('La suma de las Victorias del Equipo Azul es:', data['blueWins'].sum(), 
+       '\nLa suma de las Victorias del Equipo Red es:', data['redWins'].sum())
 print('-------------------------------------------------------------------------------\n')
 
 # Buscamos el maximo valor de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
-print('El maximo valor de Wards del equipo azul colocados es:', data['blueWardsPlaced'].max(),'\nEl maximo valor de Wards del Equipo Rojo colocados es:', 
-      data['redWardsPlaced'].max(), '\nEl maximo valor del Total de Oro ganado del Equipo Azul es:', data['blueTotalGold'].max(), 
+print('El maximo valor de Wards del equipo azul colocados es:', data['blueWardsPlaced'].max(),
+      '\nEl maximo valor de Wards del Equipo Rojo colocados es:', data['redWardsPlaced'].max(), 
+      '\nEl maximo valor del Total de Oro ganado del Equipo Azul es:', data['blueTotalGold'].max(), 
       '\nEl maximo valor del Total de Oro ganado del Equipo Red es:', data['redTotalGold'].max())
 print('-------------------------------------------------------------------------------\n')
 
-# Buscamos el minimo valor de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
-print('El minimo valor de Wards del equipo azul colocados es:', data['blueWardsPlaced'].min(),'\nEl minimo valor de Wards del Equipo Rojo colocados es:', 
-      data['redWardsPlaced'].min(), '\nEl minimo valor del Total de Oro ganado del Equipo Azul es:', data['blueTotalGold'].min(), 
+# Bsucamos el minimo valor de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
+print('El minimo valor de Wards del equipo azul colocados es:', data['blueWardsPlaced'].min(),
+      '\nEl minimo valor de Wards del Equipo Rojo colocados es:', data['redWardsPlaced'].min(), 
+      '\nEl minimo valor del Total de Oro ganado del Equipo Azul es:', data['blueTotalGold'].min(), 
       '\nEl minimo valor del Total de Oro ganado del Equipo Red es:', data['redTotalGold'].min())
 print('-------------------------------------------------------------------------------\n')
 
-# Creamos una funcion donde sacamos la media de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
-def media(data):
-    mean = data.mean()
-    return mean
-
-sel_cols = ['blueWardsPlaced', 'redWardsPlaced', 'blueTotalGold', 'redTotalGold']
-
-b = data[sel_cols]
-
-blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold = b.apply(media)
-
-print('La media de Wards del equipo azul colocados es:', blueWardsPlaced,'\nLa media de Wards del Equipo Rojo colocados es:', redWardsPlaced,
-      '\nLa media del Total de Oro ganado del Equipo Azul es:', blueTotalGold, '\nLa media del Total de Oro ganado del Equipo Red es:', redTotalGold )
+# Calculamos el conteo de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
+print('El conteo de Wards del equipo azul colocados es:', data['blueWardsPlaced'].count(),
+      '\nEl conteo de Wards del Equipo Rojo colocados es:', data['redWardsPlaced'].count(), 
+      '\nEl conteo del Total de Oro ganado del Equipo Azul es:', data['blueTotalGold'].count(), 
+      '\nEl conteo del Total de Oro ganado del Equipo Red es:', data['redTotalGold'].count())
 print('-------------------------------------------------------------------------------\n')
 
-# Creamos dos funciones, una para sacar la Varianza y otra para la Desviacion estandar de las columnas: gameDuration, queueId y seasonId
-def calc_mean(series):
-    vals = series.values
-    mean = sum(vals) / len(vals)
-    return mean
+# Calculamos la moda de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
+print('El valor de la moda de Wards del equipo azul colocados es:', data['blueWardsPlaced'].mode(),
+      '\nEl valor de la moda de Wards del Equipo Rojo colocados es:', data['redWardsPlaced'].mode(), 
+      '\nEl valor de la moda del Total de Oro ganado del Equipo Azul es:', data['blueTotalGold'].mode(), 
+      '\nEl valor de la moda del Total de Oro ganado del Equipo Red es:', data['redTotalGold'].mode())
+print('-------------------------------------------------------------------------------\n')
 
-def calc_variance(series):
-    mean = calc_mean(series)
-    variance = [ (x - mean) **2 for x in series]
-    variance = sum(variance) / len(variance)
-    return variance
+# Calculamos la media de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
+print('La media de Wards del equipo azul colocados es:', data['blueWardsPlaced'].mean(),
+      '\nLa media de Wards del Equipo Rojo colocados es:', data['redWardsPlaced'].mean(), 
+      '\nLa media del Total de Oro ganado del Equipo Azul es:', data['blueTotalGold'].mean(), 
+      '\nLa media del Total de Oro ganado del Equipo Red es:', data['redTotalGold'].mean())
+print('-------------------------------------------------------------------------------\n')
 
-def calc_stdev(series):
-    variance = calc_variance(series)
-    return variance ** (1/2)
+# Calculamos la varianza de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
+print('La varianza de Wards del equipo azul colocados es:', data['blueWardsPlaced'].var(),
+      '\nLa varianza de Wards del Equipo Rojo colocados es:', data['redWardsPlaced'].var(), 
+      '\nLa varianza del Total de Oro ganado del Equipo Azul es:', data['blueTotalGold'].var(), 
+      '\nLa varianza del Total de Oro ganado del Equipo Red es:', data['redTotalGold'].var())
+print('-------------------------------------------------------------------------------\n')
 
-gD_var, qI_var, sI_var = b.apply(calc_variance)
-gD_stdev, qI_stdev, sI_stdev = b.apply(calc_stdev)
+# Calculamos la desviacion estandar de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
+print('La desviacion estandar de Wards del equipo azul colocados es:', data['blueWardsPlaced'].std(),
+      '\nLa desviacion estandar de Wards del Equipo Rojo colocados es:', data['redWardsPlaced'].std(), 
+      '\nLa desviacion estandar del Total de Oro ganado del Equipo Azul es:', data['blueTotalGold'].std(), 
+      '\nLa desviacion estandar del Total de Oro ganado del Equipo Red es:', data['redTotalGold'].std())
+print('-------------------------------------------------------------------------------\n')
 
-print('La varianza de gameDuration, queueId, seasonId es:', gD_var, qI_var, sI_var)
-print('La desviacion estandar de gameDuration, queueId, seasonId es:', gD_stdev, qI_stdev, sI_stdev)
+# Calculamos la asimetria de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
+print('La asimetria de Wards del equipo azul colocados es:', data['blueWardsPlaced'].skew(),
+      '\nLa asimetria de Wards del Equipo Rojo colocados es:', data['redWardsPlaced'].skew(), 
+      '\nLa asimetria del Total de Oro ganado del Equipo Azul es:', data['blueTotalGold'].skew(), 
+      '\nLa asimetria del Total de Oro ganado del Equipo Red es:', data['redTotalGold'].skew())
+print('-------------------------------------------------------------------------------\n')
