@@ -15,7 +15,7 @@ print ('La suma de las Victorias del Equipo Azul es:', data['blueWins'].sum(),
 print('-------------------------------------------------------------------------------\n')
 
 sel_cols = ['blueWardsPlaced', 'redWardsPlaced', 'blueTotalGold','redTotalGoldredTotalGold']
-cols = data[sel_cols]
+##cols = data[sel_cols]
 
 # Buscamos el maximo valor de las columnas: blueWardsPlaced, redWardsPlaced, blueTotalGold, redTotalGold
 print('El maximo valor de Wards del equipo azul colocados es:', data['blueWardsPlaced'].max(),
