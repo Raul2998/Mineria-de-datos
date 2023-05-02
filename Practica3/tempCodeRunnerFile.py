@@ -15,9 +15,8 @@ P2.gold
 
 plt.figure(figsize=(10,6))
 plt.subplot(131)
-plt.bar(P2.data['gameId'], P2.data['blueWins'])
+plt.bar(P2.data['gameId'], P2.data['blueWin'])
 plt.subplot(131)
-plt.bar(P2.data['gameId'], P2.data['redWins'])
+plt.bar(P2.data['gameId'], P2.data['redWin'])
 plt.show()
-
 

@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv('C:/Users/raulh/OneDrive/Documentos/Tareas/Mineria de datos/lol_dataframe2.csv')
 sel_cols = ['blueWardsPlaced', 'redWardsPlaced', 'blueTotalGold','redTotalGold']
+wards = ['blueWardsPlaced', 'redWardsPlaced']
+gold = ['blueTotalGold','redTotalGold']
 wins = ['blueWins', 'redWins']
 a = data[sel_cols]
 b = data[wins]
