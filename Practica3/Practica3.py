@@ -7,9 +7,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from Practica2.Practica2 import data
 
-
-
-
 plt.figure(figsize=(20,20))
 plt.subplot(1, 4, 1)
 plt.scatter(data['blueKills'], data['blueTotalGold'], c='blue')
