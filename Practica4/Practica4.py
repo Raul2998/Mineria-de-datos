@@ -1,11 +1,13 @@
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 # PRACTICA 4: DATA VISUALIZATION
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-
+import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plot
 from scipy.stats import bartlett # prubea de igualdad de varianza
 from scipy.stats import normaltest # prueba de normalidad
 from scipy.stats import f_oneway #prueba ANDEVA una vía
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
 import scipy.stats
 
 data = pd.read_csv('C:/Users/raulh/OneDrive/Documentos/Mineria-de-datos/lol_dataframe3.csv')
@@ -83,3 +85,15 @@ if Fc < F:
 else:
     print('Fc = {:g}'.format(Fc), '>=', 'F = {:g}'.format(F), 'p = {:g}'.format(p))
     print('Existen evidencias suficientes para rechazar Ho, por lo que podemos suponer que al menos una de las medias es diferentes')  
+
+df = pd.DataFrame({'datos': np.concatenate([redGold.values,blueGold.values,redKills.values, blueKills.values]),
+                   'factor':np.repeat(['redGold','blueGold','redKills', 'blueKills'],repeats=26)})
+
+#Comparación multiple de tukey
+tukey = pairwise_tukeyhsd(endog=df['datos'], 
+                          groups=df['factor'],
+                          alpha=0.05)
+print(tukey)
+
+data.boxplot(column=['blueKills','redKills'])
+plot.show()
