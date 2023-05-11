@@ -8,6 +8,7 @@ data = pd.read_csv('C:/Users/raulh/OneDrive/Documentos/Tareas/Mineria de datos/l
 sel_cols = ['blueWardsPlaced', 'redWardsPlaced', 'blueTotalGold','redTotalGold']
 wards = ['blueWardsPlaced', 'redWardsPlaced']
 gold = ['blueTotalGold','redTotalGold']
+minions = ['blueTotalMinionsKilled','redTotalMinionsKilled']
 wins = ['blueWins', 'redWins']
 a = data[sel_cols]
 b = data[wins]
