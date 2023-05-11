@@ -4,7 +4,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-data = pd.read_csv('C:/Users/raulh/OneDrive/Documentos/Tareas/Mineria de datos/lol_dataframe2.csv')
+data = pd.read_csv('C:/Users/Admin/Desktop/Mineria-de-datos/lol_dataframe2.csv')
 sel_cols = ['blueWardsPlaced', 'redWardsPlaced', 'blueTotalGold','redTotalGold']
 wards = ['blueWardsPlaced', 'redWardsPlaced']
 gold = ['blueTotalGold','redTotalGold']
@@ -58,7 +58,7 @@ def skew(data):
     skew = data.skew()
     return skew
 
-# Visualizamos nuestro dataframe por sus categorias\
+# Visualizamos nuestro dataframe por sus categorias
 data.info()
 print('-------------------------------------------------------------------------------\n')
 

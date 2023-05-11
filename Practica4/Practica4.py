@@ -10,7 +10,7 @@ from scipy.stats import f_oneway #prueba ANDEVA una vía
 from statsmodels.stats.multicomp import pairwise_tukeyhsd
 import scipy.stats
 
-data = pd.read_csv('C:/Users/raulh/OneDrive/Documentos/Mineria-de-datos/lol_dataframe3.csv')
+data = pd.read_csv('C:/Users/Admin/Desktop/Mineria-de-datos/lol_dataframe3.csv')
 redGold = data['redTotalGold']
 blueGold = data['blueTotalGold']
 redKills = data['redKills']
