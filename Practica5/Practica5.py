@@ -15,7 +15,7 @@ y = data['blueTotalGold']
 # Separando las variables en training y testing
 x_train, x_test, y_train, y_test = train_test_split(x, y, train_size = 0.7, test_size = 0.3, random_state = 100)
 
-# Visualizamos el dataset train
+# Visualizamos el dataset trained
 print(x_train, y_train)
 
 # Agregamos una constante para obtener la interseccion
@@ -32,5 +32,7 @@ print(lr.summary())
 
 # Visualizamos la regresion lineal
 plt.scatter(x_train, y_train)
-plt.plot(x_train,  1.368e+04  + 457.7481*x_train, 'r')
+plt.plot(x_train,  1.368e+04  + 457.7481 * x_train, 'r')
+plt.xlabel('Asesinatos', fontsize=14)
+plt.ylabel('Oro', fontsize=14)
 plt.show()

@@ -1,3 +1,6 @@
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+# PRACTICA 6: FORECASTING
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -38,13 +41,13 @@ print(anual)
 print('-------------------------------------------------------------------------------\n')
 
 # Plotting forecast con el Movile Average aplicado
-plt.figure(figsize=(12, 6))
-plt.plot(anual.index, anual['Monthly beer production'], '-o', color = 'red', label = 'data')
-plt.plot(anual.index, anual['MA'], '-o', color = 'blue', label = 'forecast')
-plt.xlabel('Periodos', fontsize=14)
-plt.ylabel('Produccion', fontsize=14)
-plt.legend(loc = 'best')
-plt.show()
+#plt.figure(figsize=(12, 6))
+#plt.plot(anual.index, anual['Monthly beer production'], '-o', color = 'red', label = 'data')
+#plt.plot(anual.index, anual['MA'], '-o', color = 'blue', label = 'forecast')
+#plt.xlabel('Periodos', fontsize=14)
+#plt.ylabel('Produccion', fontsize=14)
+#plt.legend(loc = 'best')
+#plt.show()
 
 # Agregamos una nueva fila a nuestro dataframe para hacer el forecasting
 anual.loc[len(anual)] = [int(anual.iloc[len(anual)-1][0])+1,0,0]
