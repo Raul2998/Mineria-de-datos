@@ -12,7 +12,7 @@ data = pd.read_csv('C:/Users/raulh/OneDrive/Documentos/Mineria-de-datos/lol_data
 x = data['blueKills']
 y = data['blueTotalGold']
 
-# Separando las variables en training y testing
+# Separamos, entrenamos y probamos las variables en training y testing
 x_train, x_test, y_train, y_test = train_test_split(x, y, train_size = 0.7, test_size = 0.3, random_state = 100)
 
 # Visualizamos el dataset trained
@@ -27,7 +27,7 @@ lr = sm.OLS(y_train, X_train_sm).fit()
 # Impresion de los parametros
 print(lr.params)
 
-# Performing a summary to list out all the different parameters of the regression line fitted
+# Imprimimos el resumen para enumerar los diferentes parametros de la regresion lineal ajustada
 print(lr.summary())
 
 # Visualizamos la regresion lineal
