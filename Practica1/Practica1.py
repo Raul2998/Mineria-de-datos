@@ -4,7 +4,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
 # Lectura del csv e impresion del header
 data = pd.read_csv('C:/Users/raulh/OneDrive/Documentos/Tareas/Mineria de datos/lol_dataframe.csv')
 print(data.shape,data.head())
