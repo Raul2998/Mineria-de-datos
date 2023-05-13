@@ -1,11 +1,11 @@
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 # PRACTICA 3: DATA VISUALIZATION
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-from sys import path
-path.append("../MINERIA-DE-DATOS")
+
 import pandas as pd
 import matplotlib.pyplot as plt
-from Practica2.Practica2 import data
+
+data = pd.read_csv('C:/Users/raulh/OneDrive/Documentos/Mineria-de-datos/lol_dataframe2.csv')
 
 plt.figure(figsize=(20,20))
 plt.subplot(1, 4, 1)
