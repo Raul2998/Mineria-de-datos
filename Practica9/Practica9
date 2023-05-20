@@ -1,0 +1,26 @@
+import pandas as pd
+import nltk
+from nltk.corpus import stopwords
+from sklearn.feature_extraction.text import CountVectorizer
+
+data = pd.read_csv('C:/Users/raulh/OneDrive/Documentos/Tareas/Mineria de datos/lol_dataframe.csv')
+
+# Obtener la columna de texto que deseas analizar
+text_data = data['platformId']
+
+# Tokenización y eliminación de palabras vacías
+nltk.download('stopwords')
+stop_words = set(stopwords.words('english'))
+vectorizer = CountVectorizer(stop_words=stop_words)
+
+
+# Obtener el vocabulario de palabras
+vocab = vectorizer.get_feature_names()
+
+# Obtener la frecuencia de palabras en el texto
+word_freq = X.toarray().sum(axis=0)
+
+# Mostrar las palabras más frecuentes
+word_freq_df = pd.DataFrame({'Word': vocab, 'Frequency': word_freq})
+sorted_word_freq_df = word_freq_df.sort_values(by='Frequency', ascending=False)
+print(sorted_word_freq_df.head(10))
